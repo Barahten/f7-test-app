@@ -1,0 +1,19 @@
+{
+  "cwd": "C:\\Users\\barakhtenkosm\\Desktop\\f7",
+  "type": [
+    "web"
+  ],
+  "name": "Test app",
+  "framework": "vue",
+  "template": "split-view",
+  "cssPreProcessor": "scss",
+  "bundler": "vite",
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false
+}
