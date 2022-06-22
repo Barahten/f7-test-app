@@ -39,6 +39,7 @@ Thumbs.db
 
 
 # Production build
-www/
+/www/
+/.idea/
 /plugins/
 /platforms/
