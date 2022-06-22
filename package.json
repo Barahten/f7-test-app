@@ -24,14 +24,23 @@
     "framework7-icons": "^5.0.5",
     "framework7-vue": "^7.0.5",
     "material-icons": "^1.11.2",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^13.0.0",
+    "sass-mediascreen": "^1.0.4",
     "skeleton-elements": "^4.0.0",
     "swiper": "^8.2.4",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-i18n": "^9.1.10",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/compiler-sfc": "^3.2.37",
     "cordova-android": "^10.1.2",
+    "cordova-plugin-splashscreen": "^6.0.1",
+    "cordova-plugin-statusbar": "^3.0.0",
+    "cordova-plugin-theme-detection": "^1.3.0",
+    "cordova-sms-plugin": "^1.0.2",
     "cpy-cli": "^4.1.0",
     "cross-env": "^7.0.3",
     "postcss-preset-env": "^7.7.1",
@@ -41,6 +50,12 @@
   "cordova": {
     "platforms": [
       "android"
-    ]
+    ],
+    "plugins": {
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-sms-plugin": {},
+      "cordova-plugin-theme-detection": {}
+    }
   }
 }
