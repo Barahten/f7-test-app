@@ -1,0 +1,104 @@
+{
+  "app_name": "EMERCOM of Russia",
+  "what_to_do": {
+    "title": "What to do",
+    "subtitle": "action memo"
+  },
+  "first_aid": {
+    "title": "First Aid",
+    "subtitle": "assistance to victims"
+  },
+  "risk_map": {
+    "title": "Risk map",
+    "subtitle": "dangers by region"
+  },
+  "corona_virus": {
+    "title": "Coronavirus COVID-19"
+  },
+  "emergency_service": {
+    "title": "Emergency"
+  },
+  "send_sms": {
+    "title": "Send SMS to 112"
+  },
+  "www_portal": {
+    "title": "Official website"
+  },
+  "menu" : {
+    "about" : "About",
+    "test_results" : "Test results",
+    "settings" : "Settings",
+    "feedback" : "Feedback",
+    "notifications" : "Notifications",
+    "contacts" : "Contacts"
+  },
+  "welcome" : {
+    "slide_1" : {
+      "title" : "WELCOME!",
+      "text" : "<p>The &laquo;EMERCOM of Russia&raquo; application is an information resource that will help you navigate in a difficult situation. Here you will find recommendations on the rules of conduct in case of danger and personal security measures, ways to provide self-help and mutual assistance. All algorithms of actions are basic, but each case is individual and often requires a special approach. There are no universal recommendations for all occasions, but knowing the basics is the key to personal safety and the safety of others.</p><p>Remember: you can extinguish the fire yourself, as well as provide all possible assistance in emergency situations if there is no threat to your life and health.</p>",
+      "button" : "UNDERSTANDABLY"
+    },
+    "slide_2" : {
+      "title" : "TERMS OF USE",
+      "text" : "<p>The information, recommendations and services presented in the application are subject to careful analysis and evaluation before making a decision on their application, on their suitability for the current situation.</p><p>The Copyright Holder is not liable for any direct or indirect consequences of any use or inability to use the Application and / or damage caused to the User and / or third parties as a result of any use, non-use or inability to use the Application or its individual components and / or features, including due to possible errors or failures in the operation of the Application.</p>",
+      "button" : "I AGREE"
+    },
+    "slide_3" : {
+      "title" : "ABOUT FIRST AID",
+      "text" : "<p>According to Art. 31 of the Federal Law of the Russian Federation of November 21, 2011 No. 323 &laquo;On the Fundamentals of Protecting the Health of Citizens&raquo;, each person in Russia has the right to provide first aid to the victim in case of an emergency if he has special training and (or) skills.</p><p>We recommend that you familiarize yourself with this section in more detail, because one of the key factors is the time of the start of assistance.</p>",
+      "button" : "UNDERSTANDABLY"
+    },
+    "slide_4" : {
+      "title" : "CONFIDENTIALITY",
+      "text" : "<p>Blah blah blah blas...</p>",
+      "button" : "I AGREE"
+    }
+  },
+  "sms" : {
+    "title" : "Sending SMS to number 112",
+    "content" : "<p>Please note: according to Art. 3 of the Federal Law of the Russian Federation of December 30, 2020 No. 488 &laquo;On ensuring the call of emergency operational services by a single number \"112\"&raquo;, sending SMS to the number is intended to call external operational services on issues of life safety, prevention of threats to life or health, safety of property, as well as prevention of material damage.</p><p>For knowingly false appeal, liability is provided for under Art. 207 of the Criminal Code of the Russian Federation, 19.13 of the Code of Administrative Offenses of the Russian Federation</p><p>Sending SMS to number 122 is free (Art. 3 of the Federal Law of the Russian Federation of December 30, 2020 No. 488 &laquo;On ensuring the call of emergency operational services by a single number \"112\"&raquo;)</p>",
+    "form" : {
+      "message" : "Message text",
+      "send" : "Send"
+    }
+  },
+  "fontsize" : {
+    "title" : "Font size",
+    "preview" : "Preview",
+    "example" : "The application of the Ministry of Emergency Situations of Russia will help you navigate and instantly find information about actions in case of an emergency. It can be useful both at home and when traveling."
+  },
+  "page" : {
+    "about": {
+      "title": "About the application",
+      "content" : "<p>The <nobr>EMERCOM of Russia</nobr> App helps you orient and instantly find information about actions in case of an emergency. It can be useful at home and when traveling, in the country, in the woods and on vacation. The App contains a quick dial function for the rescue service, as well as a link to the official website of the Ministry of Emergency Situations of Russia.</p><p>The App is designed to help you navigate in emergency situations and form a culture of safe behavior in society. </p><p>The App consists of blocks: &laquo;Operational information&raquo;, &laquo;Map of adverse phenomena&raquo;, &laquo;Be ready!&raquo;, &laquo;Topical articles&raquo;.</p><p>In the &laquo;What to do?&raquo; section you can find short instructions that are always at hand, with a clear sequence of actions and rules of behavior in an emergency. The section has a voice assistant that voices the text of the article if it is not possible to hold the phone or read the information yourself. The &laquo;First aid&raquo; section contains information about providing first aid to victims who have bleeding, burns, injuries, heart attacks and other emergency problems before the arrival of doctors.</p><p>The map of adverse phenomena contains a daily operational forecast of possible natural and man-made threats and risks.</p><p>In &laquo;Check your emergency preparedness&raquo; section, specialists have developed up-to-date checklists for checking your own preparedness or your home for possible emergencies. By marking the appropriate steps, you will be able to view the overall percentage of preparedness and see the missing points for coordinating further actions. In &laquo;Check your knowledge&raquo; section, various tests will be published to check your knowledge of emergency actions. The &laquo;EMERCOM recommends&raquo; section is a repository of safety knowledge. This section explains the causes of emergencies, how to avoid them, and how to be prepared in advance. Here you can learn how to use heating devices correctly, how to avoid being bitten by a snake or tick, how to prepare the oven for the season, how to choose the right fire extinguisher, etc.</p><p>&laquo;Topical articles&raquo; block is a collection of information that is relevant for a specific period of time, related to the season, holidays, or region.</p>"
+    },
+    "feedback" : {
+      "title" : "Feedback",
+      "description" : "<p>For comments and suggestions on the application, use the form below.</p><p class=\"text-color-red\">Not for official applications of citizens!</p>",
+      "form" : {
+        "name" : "Name",
+        "message" : "Message",
+        "sent" : "Send"
+      }
+    },
+    "settings" : {
+      "title" : "Settings",
+      "form" : {
+        "dark" : "Dark theme",
+        "font" : "Font size"
+      }
+    }
+  },
+  "dialog" : {
+    "progress" : {
+      "text" : "Sending..."
+    }
+  },
+  "toast" : {
+    "sms_send" : "SMS message sent successfully",
+    "feedback_send" : "Message sent successfully"
+  },
+  "message" : {
+    "hello" : "Hello"
+  }
+}
