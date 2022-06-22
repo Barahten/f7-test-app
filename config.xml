@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.barahten.test" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.barahten.test" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Test app</name>
     <description>Sample Apache Cordova App</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
@@ -8,4 +8,54 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+
+
+    <platform name="android">
+        <config-file parent="/manifest" target="AndroidManifest.xml" mode="merge">
+            <uses-permission android:name="android.permission.SEND_SMS"/>
+        </config-file>
+        <preference name="StatusBarOverlaysWebView" value="false" />
+        <preference name="StatusBarBackgroundColor" value="#F8EFEC" />
+        <preference name="StatusBarStyle" value="default" />
+
+        <preference name="SplashMaintainAspectRatio" value="true" />
+        <preference name="AutoHideSplashScreen" value="false" />
+        <preference name="SplashScreenDelay" value="10000" />
+        <!--        <preference name="FadeSplashScreenDuration" value="1000" />-->
+        <preference name="SplashScreen" value="screen" />
+        <preference name="ShowSplashScreen" value="true" />
+        <preference name="ShowSplashScreenSpinner" value="false" />
+        <preference name="SplashShowOnlyFirstTime" value="false" />
+        <preference name="FadeSplashScreen" value="true" />
+
+        <resource-file src="res/notification/android/drawable-hdpi/notification_icon.png" target="app/src/main/res/drawable-hdpi/notification_icon.png" />
+        <resource-file src="res/notification/android/drawable-mdpi/notification_icon.png" target="app/src/main/res/drawable-mdpi/notification_icon.png" />
+        <resource-file src="res/notification/android/drawable-xhdpi/notification_icon.png" target="app/src/main/res/drawable-xhdpi/notification_icon.png" />
+        <resource-file src="res/notification/android/drawable-xxhdpi/notification_icon.png" target="app/src/main/res/drawable-xxhdpi/notification_icon.png" />
+        <resource-file src="res/notification/android/drawable-xxxhdpi/notification_icon.png" target="app/src/main/res/drawable-xxxhdpi/notification_icon.png" />
+
+        <splash density="land-hdpi" src="res/screen/android/drawable-hdpi/screen.png" />
+        <splash density="land-mdpi" src="res/screen/android/drawable-mdpi/screen.png" />
+        <splash density="land-xhdpi" src="res/screen/android/drawable-xhdpi/screen.png" />
+        <splash density="land-xxhdpi" src="res/screen/android/drawable-xxhdpi/screen.png" />
+        <splash density="land-xxxhdpi" src="res/screen/android/drawable-xxxhdpi/screen.png" />
+        <splash density="port-hdpi" src="res/screen/android/drawable-hdpi/screen.png" />
+        <splash density="port-mdpi" src="res/screen/android/drawable-mdpi/screen.png" />
+        <splash density="port-xhdpi" src="res/screen/android/drawable-xhdpi/screen.png" />
+        <splash density="port-xxhdpi" src="res/screen/android/drawable-xxhdpi/screen.png" />
+        <splash density="port-xxxhdpi" src="res/screen/android/drawable-xxxhdpi/screen.png" />
+
+        <icon background="res/icon/android/mipmap-mdpi/ic_launcher_background.png" density="mdpi" foreground="res/icon/android/mipmap-mdpi/ic_launcher_foreground.png" src="res/icon/android/mipmap-mdpi/ic_launcher.png" />
+        <icon background="res/icon/android/mipmap-hdpi/ic_launcher_background.png" density="hdpi" foreground="res/icon/android/mipmap-hdpi/ic_launcher_foreground.png" src="res/icon/android/mipmap-hdpi/ic_launcher.png" />
+        <icon background="res/icon/android/mipmap-xhdpi/ic_launcher_background.png" density="xhdpi" foreground="res/icon/android/mipmap-xhdpi/ic_launcher_foreground.png" src="res/icon/android/mipmap-xhdpi/ic_launcher.png" />
+        <icon background="res/icon/android/mipmap-xxhdpi/ic_launcher_background.png" density="xxhdpi" foreground="res/icon/android/mipmap-xxhdpi/ic_launcher_foreground.png" src="res/icon/android/mipmap-xxhdpi/ic_launcher.png" />
+        <icon background="res/icon/android/mipmap-xxxhdpi/ic_launcher_background.png" density="xxxhdpi" foreground="res/icon/android/mipmap-xxxhdpi/ic_launcher_foreground.png" src="res/icon/android/mipmap-xxxhdpi/ic_launcher.png" />
+
+    </platform>
+
+    <platform name="ios">
+        <preference name="StatusBarDefaultScrollToTop" value="true" />
+    </platform>
 </widget>
