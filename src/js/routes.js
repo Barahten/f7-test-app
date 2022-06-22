@@ -1,26 +1,47 @@
 
-import HomePage from '../pages/home.vue';
-import AboutPage from '../pages/about.vue';
-import FormPage from '../pages/form.vue';
+import Home from '../pages/home.vue';
+import About from '../pages/about.vue';
+import Feedback from '../pages/feedback.vue'
+import Settings from '../pages/settings.vue'
 
+
+
+import FormPage from '../pages/form.vue';
 import LeftPage1 from '../pages/left-page-1.vue';
 import LeftPage2 from '../pages/left-page-2.vue';
 import DynamicRoutePage from '../pages/dynamic-route.vue';
 import RequestAndLoad from '../pages/request-and-load.vue';
 import NotFoundPage from '../pages/404.vue';
 
-var routes = [
+const routes = [
   {
     path: '/',
-    component: HomePage,
+    component: Home,
+    name: 'Home'
   },
   {
-    path: '/about/',
-    component: AboutPage,
+    path: "/about/",
+    component: About,
+    name: 'About',
+    options: {
+      transition: "f7-parallax",
+    },
   },
   {
-    path: '/form/',
-    component: FormPage,
+    path: "/feedback/",
+    component: Feedback,
+    name: 'Feedback',
+    options: {
+      transition: "f7-parallax",
+    },
+  },
+  {
+    path: "/settings/",
+    component: Settings,
+    name: 'Settings',
+    options: {
+      transition: "f7-parallax",
+    },
   },
 
   {
@@ -37,7 +58,7 @@ var routes = [
   },
   {
     path: '/request-and-load/user/:userId/',
-    async: function ({ router, to, resolve }) {
+    async: function ({router, to, resolve}) {
       // App instance
       var app = router.app;
 
@@ -70,14 +91,14 @@ var routes = [
 
         // Resolve route to load page
         resolve(
-          {
-            component: RequestAndLoad,
-          },
-          {
-            props: {
-              user: user,
+            {
+              component: RequestAndLoad,
+            },
+            {
+              props: {
+                user: user,
+              }
             }
-          }
         );
       }, 1000);
     },
