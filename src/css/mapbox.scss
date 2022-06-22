@@ -1,0 +1,167 @@
+
+.mapboxgl-ctrl-top-right {
+  margin-top:165px;
+  .mapboxgl-ctrl {
+    background: none !important;
+    box-shadow: none !important;
+    margin-top:0 !important;
+    button {
+      width:40px !important;
+      height:40px !important;
+      border-radius: 50% !important;
+      box-shadow: 0 0 4px #d6d6d6 !important;
+      margin-bottom: 10px;
+      background-color: #fff !important;
+      border: 0 !important;
+      opacity: 0.8;
+    }
+  }
+}
+
+.map-button {
+  position: absolute;
+  width:40px !important;
+  height:40px !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 4px #d6d6d6 !important;
+  margin-bottom: 10px;
+  background-color: rgba(255,255,255, .8);
+  border: 0 !important;
+  outline: none;
+  &.filter {
+    bottom:40px; right:10px;
+  }
+  .icon-checkbox {
+    opacity: 0;
+  }
+  .checkbox {
+    &:before {
+      content:'';
+      display: block;
+      position: absolute;
+      top:-15px; left:-15px; right:-15px; bottom:-15px;
+    }
+  }
+}
+.map-overlay {
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+  margin-right: -75px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  border-radius: 3px;
+  width: 150px;
+  line-height: 18px;
+}
+.theme-dark {
+  .map-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.legend-key {
+  display: inline-block;
+  width: 21px;
+  height: 10px;
+  margin: 0;
+  flex: 0 0 auto;
+  font-size: 10px;
+}
+.legend-font {
+  display: inline-block;
+  flex: 0 0 auto;
+  font-size: 7px;
+  margin-right: 10px;
+}
+
+.legend-key-font {
+  font-size: 12px;
+}
+
+.legend-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
+  align-content: space-between;
+}
+
+.legend-container-child {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: space-between;
+}
+.legend-container-child-title {
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.legend-font-title {
+  font-size: 8px;
+  margin-bottom: 40px;
+}
+
+.layer-on {
+  margin:0 auto;
+  border:0 !important;
+  background: #fff;
+  padding:15px 0;
+  transition: .25s;
+  transform: translateY(0);
+  &.filter-hide {
+    transform: translateY(-152px);
+  }
+  ul {
+    &:after,
+    &:before {
+      left:10px;
+      right:10px;
+      width:auto;
+    }
+  }
+  .item-content {
+    padding:0 10px;
+    min-height:30px;
+    position:relative;
+  }
+  .item-inner {
+    padding:2px 0 2px 0;
+    min-height:34px;
+    &:after,
+    &:before {
+      width:100%;
+      left:0;
+    }
+    label {
+      position: static;
+      &:before {
+        content:'';
+        display: block;
+        position: absolute;
+        left:0;top:0;right:0;bottom:0;
+      }
+    }
+  }
+}
+.theme-dark {
+  .layer-on {
+    background-color: #000;
+  }
+}
+
+div.mapboxgl-ctrl button.mapboxgl-ctrl-geolocate .mapboxgl-ctrl-icon {
+  background-image: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ3Ny44ODMgNDc3Ljg4MyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDc3Ljg4MyA0NzcuODgzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDY4LjQ1NiwxLjgwOGMtNC44MTEtMi40MTEtMTAuNDc4LTIuNDExLTE1LjI4OSwwbDAsMEw5LjQzMywyMjMuNjc1Yy04LjQyOSw0LjIxOS0xMS44NDIsMTQuNDcxLTcuNjI0LDIyLjkgICAgYzIuNDAxLDQuNzk4LDYuOTE5LDguMTg4LDEyLjE5Nyw5LjE1MWwxNzYuMTExLDMyLjAzNGwzMi4wMzQsMTc2LjExMWMxLjMxMSw3LjIxOSw3LjA5MSwxMi43OTMsMTQuMzUzLDEzLjg0MSAgICBjMC44MDMsMC4xMTYsMS42MTMsMC4xNzMsMi40MjMsMC4xNzFjNi40NjksMC4wMDMsMTIuMzgzLTMuNjUxLDE1LjI3NS05LjQzOEw0NzYuMDcsMjQuNzExICAgIEM0ODAuMjkyLDE2LjI4NCw0NzYuODgzLDYuMDMsNDY4LjQ1NiwxLjgwOHoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K");
+  background-size: 14px;
+}
+div.mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-active .mapboxgl-ctrl-icon,
+div.mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-background .mapboxgl-ctrl-icon {
+  background-size: cover;
+}

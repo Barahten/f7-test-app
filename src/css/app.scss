@@ -1,31 +1,178 @@
-/* Left Panel right border when it is visible by breakpoint */
-.panel-left.panel-in-breakpoint:before {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 1px;
-  background: rgba(0,0,0,0.1);
-  content: '';
-  z-index: 6000;
+@import "override";
+@import "icons.css";
+
+:root {
+  --f7-theme-color: #205591;
+  --f7-theme-color-rgb: 32, 85, 145;
+  --f7-theme-color-shade: #cacad1;
+  --f7-theme-color-tint: #f6f6f7;
+  --f7-navbar-bg-color: #e8f0f6;
+  --f7-navbar-bg-color-rgb:32, 85, 145;
+  --f7-bars-bg-color: #205591;
+  --f7-toolbar-bg-color:#f7f7f8;
+  --f7-navbar-large-title-text-color: #000;
+  --f7-navbar-link-color:#00427b;
+  --f7-navbar-text-color: #00427b;
+  --f7-navbar-large-title-font-size: 20px;
+  --f7-navbar-large-title-height:40px;
+  --f7-navbar-font-size:22px;
+  --f7-block-title-white-space: normal;
+  --f7-list-item-title-white-space: normal;
+  --f7-list-bg-color: rgba(0,0,0,0);
+  --f7-navbar-large-title-font-weight: normal;
+  --f7-navbar-title-font-weight: normal;
+  --f7-bars-shadow-bottom-image: none;
+  --f7-list-border-color: #d9dadb;
+  --f7-list-item-border-color: #d9dadb;
+  --f7-block-title-text-color:#687784;
+  --f7-list-item-header-text-color:#687784;
+  --f7-list-chevron-icon-color: #687784;
+}
+/*
+  Dark theme
+*/
+:root.dark,
+:root .dark {
+  --f7-theme-color: #307acf;
+  --f7-navbar-bg-color: #0a0a0a;
+  --f7-toolbar-bg-color: var(--f7-navbar-bg-color);
+  --f7-navbar-bg-color-rgb:#0a0a0a;
+  .icon-block a {
+    color: #fff;
+  }
+  .title .swiper-container:before {
+    background: linear-gradient(90deg, rgba(10, 10, 10, 0) 0%, #0a0a0a 100%)
+  }
+  .plyr--audio .plyr__controls {
+    background: #0a0a0a;
+  }
+  .navbar .title {
+    color:#fff;
+  }
+  .swiper-button-next {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), black);
+  }
+  .swiper-button-prev {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), black);
+  }
+  .page-content {
+    background: #0e0e0e;
+  }
 }
 
-/* Hide navbar link which opens left panel when it is visible by breakpoint */
-.panel-left.panel-in-breakpoint ~ .view .navbar .panel-open[data-panel="left"] {
-  display: none;
+.page-content {
+  background: rgb(248,239,236);
+  background: linear-gradient(4deg, rgba(248,239,236,1) 0%, rgb(231, 240, 246) 60%);
+}
+/* Left Panel right border when it is visible by breakpoint */
+.panel-left {
+  &.panel-in-breakpoint:before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: rgba(0,0,0,0.1);
+    content: '';
+    z-index: 6000;
+  }
+  .page-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+  /* Hide navbar link which opens left panel when it is visible by breakpoint */
+  .panel-left.panel-in-breakpoint ~ .view .navbar .panel-open[data-panel="left"] {
+    display: none;
+  }
+
+  /*
+    Extra borders for main view and left panel for iOS theme when it behaves as panel (before breakpoint size)
+  */
+  .ios .panel-left:not(.panel-in-breakpoint).panel-in ~ .view-main:before,
+  .ios .panel-left:not(.panel-in-breakpoint).panel-closing ~ .view-main:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: rgba(0,0,0,0.1);
+    content: '';
+    z-index: 6000;
+  }
+}
+/*
+  Navbar title
+*/
+.navbar .title, .icon-block a {
+  color: #000;
 }
 
 /*
-  Extra borders for main view and left panel for iOS theme when it behaves as panel (before breakpoint size)
+  Language switcher
 */
-.ios .panel-left:not(.panel-in-breakpoint).panel-in ~ .view-main:before,
-.ios .panel-left:not(.panel-in-breakpoint).panel-closing ~ .view-main:before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 1px;
-  background: rgba(0,0,0,0.1);
-  content: '';
-  z-index: 6000;
+.lang-switcher {
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .icon-radio {
+    border: none
+  }
+  .c-icon-lng {
+    label {
+      min-width:90px;
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        vertical-align: middle;
+        margin-left: 30px;
+      }
+    }
+    &.ru-radio label {
+      &:after {
+        background-image: url("../images/flags/ru.svg");
+      }
+    }
+    &.en-radio label {
+      &:after {
+        background-image: url("../images/flags/uk.svg");
+      }
+    }
+  }
 }
+
+/*
+  Utils
+*/
+.margin-top-auto {
+  margin-top: auto;
+}
+
+/* Popup swiper */
+#swiper-welcome {
+  height: 100%;
+}
+#swiper-welcome .swiper-wrapper {
+  height: 100% !important;
+}
+#swiper-welcome .swiper-slide {
+  height: 100% !important;
+}
+#swiper-welcome .swiper-slide .block {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--f7-block-margin-vertical) !important;
+  padding-bottom: calc(var(--f7-block-margin-vertical) * 1.5);
+  margin: 0 !important;
+}
+#swiper-welcome .swiper-slide .block-inner {
+  flex: 1;
+}
+

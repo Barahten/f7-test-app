@@ -1,0 +1,50 @@
+@import "~sass-mediascreen/mediascreen";
+
+
+@include device(mobile tablet laptop, landscape) {
+  .gallery-swiper {
+    display: flex !important;
+    flex-direction: row;
+    .img {
+      width: 49%;
+      img {
+        width: 100%;
+        height:auto;
+      }
+    }
+    p {
+      width:50%;
+    }
+  }
+}
+@include device(mobile, landscape) {
+  .toolbar-bottom {
+    display:none;
+  }
+}
+@include device(mobile, portrait) {
+  .gallery-swiper {
+    img {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+@include device(mobile tablet laptop, landscape) {
+  .img {
+    width: 49%;
+    img {
+      width: 100%;
+      height:auto;
+    }
+  }
+}
+
+@include device(mobile, portrait) {
+  img {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
