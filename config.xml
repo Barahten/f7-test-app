@@ -16,6 +16,9 @@
         <config-file parent="/manifest" target="AndroidManifest.xml" mode="merge">
             <uses-permission android:name="android.permission.SEND_SMS"/>
         </config-file>
+        <config-file parent="/manifest/application" target="app/src/main/AndroidManifest.xml">
+            <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/notification_icon" />
+        </config-file>
         <preference name="StatusBarOverlaysWebView" value="false" />
         <preference name="StatusBarBackgroundColor" value="#F8EFEC" />
         <preference name="StatusBarStyle" value="default" />

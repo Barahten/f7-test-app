@@ -45,29 +45,19 @@
 
     <f7-list class="searchbar-hide-on-search">
       <f7-list-item link="/checklist/" title="">
-        <h4 class="no-margin-vertical color-black">
-          Проверь свою готовность
-        </h4>
+        <h4 class="no-margin-vertical color-black">{{ $t('page.home.categories.check_preparedness') }}</h4>
       </f7-list-item>
       <f7-list-item link="/check-your-knowledge/" title="">
-        <h4 class="no-margin-vertical color-black">
-          Проверь свои знания
-        </h4>
+        <h4 class="no-margin-vertical color-black">{{ $t('page.home.categories.check_knowledge') }}</h4>
       </f7-list-item>
       <f7-list-item link="/recommendations/" title="">
-        <h4 class="no-margin-vertical color-black">
-          МЧС рекомендует
-        </h4>
+        <h4 class="no-margin-vertical color-black">{{ $t('page.home.categories.emercom_recommends') }}</h4>
       </f7-list-item>
       <f7-list-item link="/go/" title="">
-        <h4 class="no-margin-vertical color-black">
-          Гражданская оборона
-        </h4>
+        <h4 class="no-margin-vertical color-black">{{ $t('page.home.categories.civil_defense') }}</h4>
       </f7-list-item>
       <f7-list-item link="/children/" title="">
-        <h4 class="no-margin-vertical color-black">
-          МЧС детям
-        </h4>
+        <h4 class="no-margin-vertical color-black">{{ $t('page.home.categories.children_menu') }}</h4>
       </f7-list-item>
     </f7-list>
 
@@ -90,7 +80,7 @@
           </f7-link>
         </f7-col>
         <f7-col class="padding-horizontal">
-          <f7-link class="display-flex flex-direction-column align-items-center external" href="#" @click="popupOpened = true">
+          <f7-link class="display-flex flex-direction-column align-items-center external" href="#" @click="smsPopupOpened = true">
             <img :src="icons.sms" alt="" />
             <div class="text-align-center margin-top-half">
               <span>{{ $t('send_sms.title') }}</span>
@@ -108,7 +98,11 @@
       </f7-row>
     </f7-block>
 
-    <f7-popup class="popup-sms" :opened="popupOpened" @popup:closed="popupOpened = false">
+    <!-- Actual articles -->
+    <f7-block-title v-if="actualArticles">{{ $t("page.home.actual") }}</f7-block-title>
+    <link-list :articles="actualArticles" />
+
+    <f7-popup class="popup-sms" :opened="smsPopupOpened" @popup:closed="smsPopupClosed">
       <f7-page>
         <f7-navbar>
           <f7-nav-title>{{ $t('sms.title') }}</f7-nav-title>
@@ -119,7 +113,7 @@
           </f7-nav-right>
         </f7-navbar>
           <f7-list no-hairlines>
-            <f7-list-input :label="$t('sms.form.message')" floating-label type="textarea" :placeholder="$t('sms.form.message')" required validate v-model:value="message" resizable />
+            <f7-list-input :label="$t('sms.form.message')" floating-label type="textarea" :placeholder="$t('sms.form.message')" v-model:value="message" resizable />
             <f7-block>
               <f7-button large fill round type="button" :disabled="!message" @click="pushSms">{{ $t('sms.form.send') }}</f7-button>
             </f7-block>
@@ -179,8 +173,10 @@ import www from "../images/www.svg";
 
 import { f7 } from 'framework7-vue';
 import cordovaApp from "../js/cordova";
+import LinkList from "../components/link-list.vue";
 
 export default {
+  components: {LinkList},
   data() {
     return {
       icons : {
@@ -192,65 +188,22 @@ export default {
         sms,
         www
       },
-      popupOpened: false,
+      smsPopupOpened: false,
       message: null,
       swiperParams: {
         autoHeight: true,
         allowTouchMove: false,
         centeredSlides: true,
-        // spaceBetween: 20,
-        // init: true,
-        // on: {
-        //   slideChangeTransitionStart: () => {
-        //     this.Dom7(".page-content").scrollTop(0, 300);
-        //   },
-        // },
       }
     };
   },
   methods: {
     pushSms() {
-      f7.dialog.progress(this.$t('dialog.progress.text'));
-
-        let options = {
-          replaceLineBreaks: false, // true to replace \n by a new line, false by default
-          android: {
-            intent: '' // send SMS without opening any other app, require : android.permission.SEND_SMS and android.permission.READ_PHONE_STATE
-          }
-        };
-          window.sms.hasPermission(hasPermission => {
-            if(hasPermission) {
-              window.sms.send('+79999204165', this.message, options, () => {
-                this.message = null
-                this.popupOpened = false
-                f7.dialog.close()
-                f7.toast.create({
-                  text: this.$t('toast.sms_send'),
-                  closeTimeout: 5000,
-                  closeButton: true,
-                  closeButtonColor: 'white'
-                }).open(true);
-                console.log('SMS SENT')
-              }, error => {console.log('SMS ERROR', error)})
-            } else {
-              window.sms.requestPermission(() => {
-                window.sms.send('+79999204165', this.message, options, () => {
-                  this.message = null
-                  f7.dialog.close()
-                  f7.toast.create({
-                    text: 'СМС успешно отправлено',
-                    closeTimeout: 2000,
-                  }).open(true);
-                }, error => {console.log('SMS ERROR', error)})
-              }, () => {
-                console.log('SMS PERMISSION DENIED')
-              })
-            }
-
-          }, () => {
-            console.log('SMS PERMISSION DENIED')
-          })
-
+      cordovaApp.smsSendHandler(this.message)
+    },
+    smsPopupClosed() {
+      this.smsPopupOpened = false
+      this.message = null
 
     },
     langSwitcher(lang) {
@@ -260,12 +213,16 @@ export default {
     handleWelcomePopup() {
       f7.swiper.get("#swiper-welcome").update();
     },
-    nextSlide() {
+    nextSlide(){
       f7.swiper.get('#swiper-welcome').slideNext()
     },
-    closeWelcomePopup() {
+    async closeWelcomePopup() {
+      console.log('WELCOME CLOSE')
+      await cordovaApp.smsPermissionRequest()
+      await cordovaApp.geolocationPermissionRequest()
+      await cordovaApp.pushPermissionRequest()
+
       localStorage.welcome = false;
-      cordovaApp.smsPermissionRequest()
     },
 
   },
@@ -273,9 +230,21 @@ export default {
     showWelcomePopup() {
       return !localStorage.welcome;
     },
+    actualArticles() {
+      return this.$store.getters.ACTUAL_ARTICLES
+    }
   },
   mounted() {
     console.log('FROM STORE', this.$store.getters.count)
   }
 }
 </script>
+<style>
+.simple-list li::after,
+.links-list a::after,
+.list .item-inner::after {
+  left: -16px;
+  right: 0;
+  width: auto
+}
+</style>

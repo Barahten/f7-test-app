@@ -16,6 +16,7 @@ import '../css/app.scss';
 // Import App Component
 import App from '../components/app.vue';
 import store from "./store";
+import VuePlyr from 'vue-plyr';
 
 // Init Framework7-Vue Plugin
 Framework7.use(Framework7Vue);
@@ -37,7 +38,7 @@ const lang = () => {
     }
 }
 console.log('LANGUAGE', lang())
-const i18n = createI18n({
+export const i18n = createI18n({
     legacy: true,
     locale: lang(), // set locale
     fallbackLocale: 'ru', // set fallback locale
@@ -50,6 +51,7 @@ const i18n = createI18n({
 const app = createApp(App);
 app.use(store)
 app.use(i18n)
+app.use(VuePlyr)
 
 // Register Framework7 Vue components
 registerComponents(app);

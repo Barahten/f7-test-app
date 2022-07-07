@@ -5,22 +5,7 @@
   <f7-panel left cover :visible-breakpoint="960" swipe>
     <f7-view>
       <f7-page>
-        <f7-list class="lang-switcher">
-          <f7-list-item
-              @change="changeLang('ru')"
-              radio
-              name="demo-radio"
-              class="c-icon-lng ru-radio"
-              :checked="currentLanguage === 'ru'"
-          ></f7-list-item>
-          <f7-list-item
-              @change="changeLang('en')"
-              radio
-              name="demo-radio"
-              class="c-icon-lng en-radio"
-              :checked="currentLanguage === 'en'"
-          ></f7-list-item>
-        </f7-list>
+        <lang-switcher />
         <f7-list simple-list>
           <f7-list-item>
             <f7-link panel-close="left" href="/personal-area/">{{ this.$t('menu.test_results') }}</f7-link>
@@ -65,7 +50,9 @@
   import routes from '../js/routes.js';
   import cordovaApp from '../js/cordova'
   import Dom7 from 'dom7';
+  import LangSwitcher from './lang-switcher.vue'
   export default {
+    components: {LangSwitcher},
     data() {
       return {
         f7params : {
@@ -73,22 +60,24 @@
           autoDarkMode: true,
           version: '1.2.5',
           routes: routes,
+          touch: {
+            tapHold: true,
+            fastClicks: true,
+            materialRipple: true,
+            activeState: true,
+            disableContextMenu: false
+          }
         }
       }
     },
     methods : {
-      changeLang(lang) {
-        this.$i18n.locale = lang;
-        localStorage.lang = lang;
-      },
       onDeviceReady: () => {
         cordovaApp.init()
       }
     },
     computed: {
-      currentLanguage() {
-        return this.$i18n.locale;
-      }
+
+
     },
     mounted() {
       if(localStorage.fontsize) {

@@ -4,7 +4,7 @@
     <f7-list>
       <f7-list-item>
         <span>{{$t('page.settings.form.dark')}}</span>
-        <f7-toggle class="toggle dark" @toggle:change="changeTheme" v-model:checked="checked"></f7-toggle>
+        <f7-toggle class="toggle" @toggle:change="changeTheme" v-model:checked="checked"></f7-toggle>
       </f7-list-item>
     </f7-list>
     <f7-list virtual-list>
@@ -60,7 +60,7 @@ export default {
     changeSize(fontsize) {
       Dom7('body').attr('style', 'font-size:' + fontsize + 'px')
       localStorage.fontsize = fontsize
-      this.$store.commit('fontsize', fontsize)
+      this.$store.commit('FONTSIZE', fontsize)
     }
 
   },
@@ -76,11 +76,11 @@ export default {
 
     },
     fontsize() {
-      return this.$store.getters.fontsize;
+      return this.$store.getters.FONTSIZE;
     },
   },
   mounted() {
-    console.log('FROM STORE', this.$store.getters.count)
+
   }
 }
 </script>

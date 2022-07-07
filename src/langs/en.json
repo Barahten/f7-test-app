@@ -68,6 +68,16 @@
     "example" : "The application of the Ministry of Emergency Situations of Russia will help you navigate and instantly find information about actions in case of an emergency. It can be useful both at home and when traveling."
   },
   "page" : {
+    "home" : {
+      "categories" : {
+        "check_preparedness": "Check you emergency preparedness",
+        "check_knowledge": "Check your knowledge",
+        "emercom_recommends": "EMERCOM recommends",
+        "civil_defense": "Civil defense",
+        "children_menu": "EMERCOM for children"
+      }
+    },
+    "actual" : "Актуальные статьи",
     "about": {
       "title": "About the application",
       "content" : "<p>The <nobr>EMERCOM of Russia</nobr> App helps you orient and instantly find information about actions in case of an emergency. It can be useful at home and when traveling, in the country, in the woods and on vacation. The App contains a quick dial function for the rescue service, as well as a link to the official website of the Ministry of Emergency Situations of Russia.</p><p>The App is designed to help you navigate in emergency situations and form a culture of safe behavior in society. </p><p>The App consists of blocks: &laquo;Operational information&raquo;, &laquo;Map of adverse phenomena&raquo;, &laquo;Be ready!&raquo;, &laquo;Topical articles&raquo;.</p><p>In the &laquo;What to do?&raquo; section you can find short instructions that are always at hand, with a clear sequence of actions and rules of behavior in an emergency. The section has a voice assistant that voices the text of the article if it is not possible to hold the phone or read the information yourself. The &laquo;First aid&raquo; section contains information about providing first aid to victims who have bleeding, burns, injuries, heart attacks and other emergency problems before the arrival of doctors.</p><p>The map of adverse phenomena contains a daily operational forecast of possible natural and man-made threats and risks.</p><p>In &laquo;Check your emergency preparedness&raquo; section, specialists have developed up-to-date checklists for checking your own preparedness or your home for possible emergencies. By marking the appropriate steps, you will be able to view the overall percentage of preparedness and see the missing points for coordinating further actions. In &laquo;Check your knowledge&raquo; section, various tests will be published to check your knowledge of emergency actions. The &laquo;EMERCOM recommends&raquo; section is a repository of safety knowledge. This section explains the causes of emergencies, how to avoid them, and how to be prepared in advance. Here you can learn how to use heating devices correctly, how to avoid being bitten by a snake or tick, how to prepare the oven for the season, how to choose the right fire extinguisher, etc.</p><p>&laquo;Topical articles&raquo; block is a collection of information that is relevant for a specific period of time, related to the season, holidays, or region.</p>"
@@ -87,6 +97,20 @@
         "dark" : "Dark theme",
         "font" : "Font size"
       }
+    },
+    "map" : {
+      "title": "Map of adverse of phenomena",
+      "as_date" : "As of",
+      "forecast_copyright": "Data provided by &laquo;Roshydromet&raquo;",
+      "form": {
+        "forecast" : "Operational forecast",
+        "my_coords" : "My coordinates"
+      },
+      "legend" : {
+        "title" : "Risk level",
+        "low" : "Low",
+        "high" : "High"
+      }
     }
   },
   "dialog" : {
@@ -96,7 +120,10 @@
   },
   "toast" : {
     "sms_send" : "SMS message sent successfully",
-    "feedback_send" : "Message sent successfully"
+    "feedback_send" : "Message sent successfully",
+    "exit" : "Please press again to exit app",
+    "loading" : "Loading...",
+    "copied" : "Copied"
   },
   "message" : {
     "hello" : "Hello"

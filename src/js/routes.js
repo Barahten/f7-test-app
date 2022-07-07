@@ -3,7 +3,9 @@ import Home from '../pages/home.vue';
 import About from '../pages/about.vue';
 import Feedback from '../pages/feedback.vue'
 import Settings from '../pages/settings.vue'
-
+import Map from '../pages/map.vue'
+import Articles from "../pages/articles.vue";
+import WhatToDo from "../pages/what-to-do.vue"
 
 
 import FormPage from '../pages/form.vue';
@@ -43,6 +45,36 @@ const routes = [
       transition: "f7-parallax",
     },
   },
+  {
+    path: "/map/",
+    component: Map,
+    name: 'Map',
+    options: {
+      transition: "f7-parallax",
+    },
+  },
+  {
+    path: "/article-page/:uniqid",
+    component: Articles,
+    name: 'Articles',
+    options: {
+      transition: "f7-parallax",
+    },
+  },
+  {
+    path: "/what-to-do/",
+    component: WhatToDo,
+    options: {
+      transition: "f7-parallax",
+    },
+  },
+
+
+
+
+
+
+
 
   {
     path: '/left-page-1/',
